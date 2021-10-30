@@ -1,4 +1,4 @@
-// import cron from 'node-cron'
+import cron from 'node-cron'
 import fs from 'fs'
 import tmp from 'tmp'
 import { TelegramClient } from 'telegram'
@@ -28,11 +28,23 @@ class SleepIndicator extends BlazeCommon {
   }
 
   async init() {
+    cron.schedule('00 22 * * *', () => {
+      this.update()
+    })
+
+    cron.schedule('00 06 * * *', () => {
+      this.revert()
+    })
+  }
+
+  private async update() {
     const buffer = await addOverlay(this.userPicture, '03.png')
     const tmpFile = tmp.fileSync()
 
     fs.writeFileSync(tmpFile.name, buffer)
     this.updateProfilePicture(tmpFile.name)
   }
+
+  private async revert() {}
 }
 export { SleepIndicator }

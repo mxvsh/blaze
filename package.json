@@ -1,5 +1,5 @@
 {
-  "name": "blaze",
+  "name": "blaze-telegram",
   "version": "0.0.1",
   "main": "dist/main.js",
   "license": "MIT",

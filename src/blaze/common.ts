@@ -4,7 +4,7 @@ import { CustomFile } from 'telegram/client/uploads'
 
 class BlazeCommon {
   client: TelegramClient
-  userPicture: string = '.blaze/assets/profile.jpg'
+  userPicture: string = __dirname + '/.blaze/assets/profile.jpg'
 
   constructor(client: TelegramClient) {
     this.client = client

@@ -3,9 +3,9 @@ import { TelegramClient } from 'telegram'
 import { SleepIndicator } from './sleep-indicator'
 
 if (!fs.existsSync('.blaze')) {
-  fs.mkdirSync('.blaze')
-  fs.mkdirSync('.blaze/assets')
-  fs.mkdirSync('.blaze/config')
+  fs.mkdirSync(__dirname, '/.blaze')
+  fs.mkdirSync(__dirname, '/.blaze/assets')
+  fs.mkdirSync(__dirname, '/.blaze/config')
 }
 
 class Blaze {

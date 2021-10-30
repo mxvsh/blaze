@@ -1,3 +1,4 @@
 #!/usr/bin/env node
 
-require('../dist/main')()
+const blaze = require('../dist/main')
+blaze.default()

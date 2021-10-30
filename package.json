@@ -4,7 +4,8 @@
   "main": "lib/main.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "build": "npx tsc -p ."
   },
   "devDependencies": {
     "@types/configstore": "^5.0.1",

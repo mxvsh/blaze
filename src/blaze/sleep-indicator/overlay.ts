@@ -3,10 +3,11 @@ import path from 'path'
 
 const addOverlay = async (imageLink: string, overlay: string) => {
   const image = await Jimp.read(imageLink)
-  let watermark = await Jimp.read(path.join(__dirname, 'overlays', overlay))
+  let watermark = await Jimp.read(
+    path.join('modules/sleep-indicator/overlays', overlay)
+  )
 
   watermark = watermark.resize(image.bitmap.width, image.bitmap.height)
-
   watermark = await watermark
 
   image.grayscale()

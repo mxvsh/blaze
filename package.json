@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "main": "dist/main.js",
   "license": "MIT",
+  "bin": {
+    "blaze": "bin/blaze"
+  },
   "scripts": {
     "dev": "nodemon",
     "build": "npx tsc -p ."

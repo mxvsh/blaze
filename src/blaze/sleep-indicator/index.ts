@@ -28,6 +28,10 @@ class SleepIndicator extends BlazeCommon {
   }
 
   async init() {
+    if (!fs.existsSync(this.userPicture)) {
+      this.downloadProfilePicture('me')
+    }
+
     cron.schedule('00 22 * * *', () => {
       this.update()
     })
